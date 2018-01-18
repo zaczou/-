@@ -100,7 +100,8 @@ h5f = h5py.File('data.h5', 'w')
 h5f = h5py.File('data.h5', 'w')
 h5f.create_dataset('X_train', data=X)
 h5f.create_dataset('y_train', data=y)
-h5f.close()</br>
+h5f.close()
+
 h5f = h5py.File('data.h5', 'r')
 X = h5f['X_train']
 Y = h5f['y_train']

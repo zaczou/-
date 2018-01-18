@@ -79,17 +79,16 @@ type(image) # out: numpy.ndarray
 image.dtype # out: dtype('uint8')
 image.shape # out: (h,w,c) 和skimage类似
 cv2.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]]) 
-#关键字参数为dst,fx,fy,interpolation
-#dst为缩放后的图像
-#dsize为(w,h),但是image是(h,w,c)
-#fx,fy为图像x,y方向的缩放比例，
-#interplolation为缩放时的插值方式，有三种插值方式：
-#cv2.INTER_AREA:使用象素关系重采样。当图像缩小时候，该方法可以避免波纹出现。当图像放大时，类似于 CV_INTER_NN方法　　　　
-#cv2.INTER_CUBIC: 立方插值
-#cv2.INTER_LINEAR: 双线形插值　
-#cv2.INTER_NN: 最近邻插值
+# 关键字参数为dst,fx,fy,interpolation
+# dst为缩放后的图像
+# dsize为(w,h),但是image是(h,w,c)
+# fx,fy为图像x,y方向的缩放比例，
+# interplolation为缩放时的插值方式，有三种插值方式：
+# cv2.INTER_AREA:使用象素关系重采样。当图像缩小时候，该方法可以避免波纹出现。当图像放大时，类似于 CV_INTER_NN方法　　　　
+# cv2.INTER_CUBIC: 立方插值
+# cv2.INTER_LINEAR: 双线形插值　
+# cv2.INTER_NN: 最近邻插值
 ```
-
 
 ### 3.1.4 保存
 * numpy.save, numpy.savez
@@ -117,8 +116,14 @@ h5f.close()
 # 四. 结合论文熟悉不同框架
 ## 4.1 MRC（机器阅读理解）
 ### 4.1.1 r-net
+### 4.1.2 FusionNet
+### 4.1.3 DCN+
 
 ## 4.2 VQA（视觉问答）
+### 4.2.1 MCB
+### 4.2.2 MFB
+### 4.2.3 MUTAN, Tucker Decomposition
+### 4.2.4 第一名方案
 
 ## 4.3 细粒度图像识别
 

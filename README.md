@@ -107,8 +107,15 @@ X = h5f['X_train']
 Y = h5f['y_train']
 h5f.close()
 ```
-
 ## 3.2 tensorflow
 
-
 ## 3.3 pytorch
+
+
+# 四. 结合论文熟悉不同框架
+## 4.1 MRC（机器阅读理解）
+### 4.1.1 r-net
+
+## 4.2 VQA（视觉问答）
+
+## 4.3 细粒度图像识别

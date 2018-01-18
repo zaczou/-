@@ -15,4 +15,16 @@ word, excel, ppt,vs
 bdp
 
 everything，tampermonkey
-sharelatex，processon，
+sharelatex，processon
+
+# 二. python爬虫
+
+
+# 三. 数据读取与保存
+## 3.1 python
+
+
+## 3.2 tensorflow
+
+
+## 3.3 pytorch

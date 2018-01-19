@@ -187,13 +187,14 @@ plot_confusion_matrix(cnf_matrix, classes=class_names, normalize=True,
                       title='Normalized confusion matrix')
 plt.show()
 ```
-## 5.2 xgboost [英文](http://xgboost.readthedocs.io/en/latest/),[中文](http://xgboost.apachecn.org/cn/latest/)
+## 5.2 xgboost [英文](http://xgboost.readthedocs.io/en/latest/), [中文](http://xgboost.apachecn.org/cn/latest/)
 ## 5.3 tensorflow [中文](https://tensorflow.google.cn/)
 ## 5.4 keras [中文](http://keras-cn.readthedocs.io/en/latest/)
 ### 5.4.1 不同模型权重
-(https://github.com/freelzy/Baidu_Dogs)
+(https://github.com/freelzy/Baidu_Dogs)</br>
 [Densenet](https://github.com/flyyufelix/DenseNet-Keras)
-## 5.5 pytorch
+
+## 5.5 pytorch  [英文](http://pytorch.org/), [中文](http://pytorch.apachecn.org/cn/0.3.0/)
 ### 5.5.1 不同模型权重
 (https://github.com/Cadene/pretrained-models.pytorch)
 

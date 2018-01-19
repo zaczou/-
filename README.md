@@ -192,8 +192,10 @@ plt.show()
 ## 5.4 keras
 ### 5.4.1 不同模型权重
 (https://github.com/freelzy/Baidu_Dogs)
+[Densenet](https://github.com/flyyufelix/DenseNet-Keras)
 ## 5.5 pytorch
-
+### 5.5.1 不同模型权重
+(https://github.com/Cadene/pretrained-models.pytorch)
 
 
 

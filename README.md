@@ -191,12 +191,17 @@ plt.show()
 ## 5.3 tensorflow [中文](https://tensorflow.google.cn/)
 ## 5.4 keras [中文](http://keras-cn.readthedocs.io/en/latest/)
 ### 5.4.1 不同模型权重
-(https://github.com/freelzy/Baidu_Dogs)</br>
-[Densenet](https://github.com/flyyufelix/DenseNet-Keras)
+1. (https://github.com/freelzy/Baidu_Dogs)</br>
+2. [Densenet](https://github.com/flyyufelix/DenseNet-Keras)
+### 5.4.2
+1. 回调函数
+from keras.callbacks import EarlyStopping  
+from keras.callbacks import TensorBoard
+early_stopping =EarlyStopping(monitor='val_loss', patience=20) 
+tb = Tensorboard(log_dir='./log')
 
 ## 5.5 pytorch  [英文](http://pytorch.org/), [中文](http://pytorch.apachecn.org/cn/0.3.0/)
 ### 5.5.1 不同模型权重
 (https://github.com/Cadene/pretrained-models.pytorch)
-
 
 

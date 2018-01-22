@@ -17,8 +17,15 @@ bdp</br>
 everything，tampermonkey</br>
 sharelatex，processon</br>
 
-# 二. python爬虫
-
+# 二. python及爬虫
+## 2.1 python知识
+1. from tqdm import tqdm 显示进度条</br>
+2. 覆盖打印 
+``` java
+from time import sleep
+print（"\r", object, end = ""）
+```
+3. 
 
 # 三. 数据读取与保存
 ## 3.1 python

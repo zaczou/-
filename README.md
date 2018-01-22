@@ -19,13 +19,33 @@ sharelatex，processon</br>
 
 # 二. python及爬虫
 ## 2.1 python知识
-1. from tqdm import tqdm 显示进度条</br>
+1. 显示进度条
+``` java
+from tqdm import tqdm
+for i in tqdm(range(100))
+```
 2. 覆盖打印 
 ``` java
 from time import sleep
 print（"\r", object, end = ""）
 ```
-3. 
+3. 格式化输出
+ ``` java
+>>> print('{} {}'.format('hello','world'))  # 不带字段, 默认左对齐
+hello world
+>>> print('{0} {1} {0}'.format('hello','world'))  # 打乱顺序
+hello world hello
+>>> print('{a} {tom} {a}'.format(tom='hello',a='world'))  # 带关键字
+world hello world
+>>> print('{:10s} and {:>10s}'.format('hello','world'))  # 取10位左对齐，取10位右对齐
+hello      and      world
+>>> print('{:^10s} and {:^10s}'.format('hello','world'))  # 取10位中间对齐
+  hello    and   world   
+>>> print('{} is {:.2f}'.format(1.123,1.123))  # 取2位小数
+1.123 is 1.12
+>>> print('{0} is {0:>10.2f}'.format(1.123))  # 取2位小数，右对齐，取10位
+1.123 is       1.12
+```
 
 # 三. 数据读取与保存
 ## 3.1 python

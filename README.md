@@ -48,12 +48,21 @@ hello      and      world
 ```
 
 # 三. 数据读取与保存
-## 3.1 python
-### 3.1.1 txt, csv等文件
+## 3.1 python读取
+### 3.1.1 txt, csv, excel等文件
+1. txt
 ``` python
-f = open('', 'r')
-for line in f:
+f.readline() #读取一行
+f.readlines() ## 返回每一行所组成的列表
+
+f = codecs.open('', 'r'， encoding='')
+for line in f: ## 迭代读取大文件
 ```
+2. csv和excel
+``` python
+f = pd.read_csv(, sep=)
+```
+
 ### 3.1.2 xml文件
 ``` python
 import xml.etree.ElementTree as ET
@@ -118,11 +127,10 @@ cv2.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]])
 ```
 
 ### 3.1.4 保存
-* numpy.save, numpy.savez
+* numpy.save, numpy.savez, numpy.load
 * h5py
 ``` python
 import h5py
-h5f = h5py.File('data.h5', 'w')
 h5f = h5py.File('data.h5', 'w')
 h5f.create_dataset('X_train', data=X)
 h5f.create_dataset('y_train', data=y)
@@ -133,6 +141,9 @@ X = h5f['X_train']
 Y = h5f['y_train']
 h5f.close()
 ```
+### 3.1.2 文件写入
+
+
 ## 3.2 tensorflow
 
 ## 3.3 pytorch

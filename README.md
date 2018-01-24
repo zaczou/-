@@ -242,6 +242,10 @@ h5f.close()
 
 # 四. 结合论文熟悉不同框架
 ## 4.1 MRC（机器阅读理解）
+* [中文阅读理解比赛](https://mp.weixin.qq.com/s/vAj7vUkvPS7jqHzewb5AuQ)
+* [squad](https://rajpurkar.github.io/SQuAD-explorer/)
+* [ms marco](http://www.msmarco.org/leaders.aspx)
+* [trivalqa](https://competitions.codalab.org/competitions/17208#learn_the_details)
 ### 4.1.1 r-net
 * [github](https://github.com/search?l=Python&o=desc&q=r-net&s=&type=Repositories&utf8=%E2%9C%93)
 * [tensorflow](https://github.com/HKUST-KnowComp/R-Net)
@@ -256,6 +260,7 @@ h5f.close()
 * [tensorflow](https://github.com/allenai/document-qa)
 
 ## 4.2 VQA（视觉问答）
+* [比赛](http://visualqa.org/roe_2017.html)
 ### 4.2.1 [MCB]
 ### 4.2.2 [MFB]
 * [pytorch](https://github.com/asdf0982/vqa-mfb.pytorch)

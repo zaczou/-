@@ -322,11 +322,12 @@ plt.show()
 2. [Densenet](https://github.com/flyyufelix/DenseNet-Keras)
 ### 5.4.2
 1. 回调函数
+```
 from keras.callbacks import EarlyStopping  
 from keras.callbacks import TensorBoard
 early_stopping =EarlyStopping(monitor='val_loss', patience=20) 
 tb = Tensorboard(log_dir='./log')
-
+```
 ## 5.5 pytorch  [英文](http://pytorch.org/), [中文](http://pytorch.apachecn.org/cn/0.3.0/)
 ### 5.5.1 不同模型权重
 (https://github.com/Cadene/pretrained-models.pytorch)

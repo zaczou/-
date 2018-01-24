@@ -14,8 +14,10 @@ pymc3, edward, pystan</br>
 word, excel, ppt</br>
 bdp</br>
 
-everything，tampermonkey</br>
-sharelatex，processon</br>
+everything, tampermonkey</br>
+sharelatex, processon</br>
+
+jupyter notebook, [colabotorary](https://zhuanlan.zhihu.com/p/33125415)[知乎](https://zhuanlan.zhihu.com/p/33232118)
 
 # 二. python及爬虫
 ## 2.1 python知识
@@ -269,7 +271,8 @@ h5f.close()
 * [pytorch](https://github.com/cadene/vqa.pytorch)
 ### 4.2.4 2017 第一名方案
 * [pytorch](https://github.com/markdtw/vqa-winner-cvprw-2017) 
-
+### 4.2.5 bottom-up-attention-vqa
+* [pytorch](https://github.com/hengyuan-hu/bottom-up-attention-vqa)
 ## 4.3 细粒度图像识别
 
 ## 4.4 Knowledge graph（知识图谱）
@@ -335,6 +338,9 @@ plt.show()
 ```
 ## 5.2 xgboost [英文](http://xgboost.readthedocs.io/en/latest/), [中文](http://xgboost.apachecn.org/cn/latest/)
 ## 5.3 tensorflow [中文](https://tensorflow.google.cn/)
+* [常用](https://github.com/lizhaoliu/tensorflow_snippets)
+
+
 ## 5.4 keras [中文](http://keras-cn.readthedocs.io/en/latest/)
 ### 5.4.1 不同模型权重
 1. (https://github.com/freelzy/Baidu_Dogs)</br>

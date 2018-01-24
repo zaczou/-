@@ -63,7 +63,7 @@ os.path.dirname() # 去掉文件名，返回目录路径
 os.path.join() # 将分离的各部分组合成一个路径名
 os.path.split() # 返回(dirname(), basename())元组
 os.path.splitext() # 返回 (filename, extension) 元组
-os.path.getatime\ctime\mtime # 分别返回最近访问、创建、修改时间
+os.path.getatime,ctime,mtime # 分别返回最近访问、创建、修改时间
 os.path.getsize() # 返回文件大小
 os.path.exists() # 是否存在
 os.path.isabs() # 是否为绝对路径

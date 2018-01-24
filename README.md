@@ -249,13 +249,17 @@ h5f.close()
 * [keras](https://github.com/YerevaNN/R-NET-in-Keras)
 ### 4.1.2 FusionNet
 * [tensorflow](https://github.com/obryanlouis/qa)
+* [pytorch](https://github.com/exe1023/FusionNet)
 ### 4.1.3 DCN+
+
+### 4.1.4 Simple and effective multi-paragraph reading comprehension
+* [tensorflow](https://github.com/allenai/document-qa)
 
 ## 4.2 VQA（视觉问答）
 ### 4.2.1 [MCB]
 ### 4.2.2 [MFB]
 ### 4.2.3 [MUTAN, Tucker Decomposition]
-### 4.2.4 [第一名方案]
+### 4.2.4 [2017 第一名方案][pytorch](https://github.com/markdtw/vqa-winner-cvprw-2017) 
 
 ## 4.3 细粒度图像识别
 

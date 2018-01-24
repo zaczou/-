@@ -46,6 +46,59 @@ hello      and      world
 >>> print('{0} is {0:>10.2f}'.format(1.123))  # 取2位小数，右对齐，取10位
 1.123 is       1.12
 ```
+## 2.2 常用模块
+1. os模块
+* os.walk(path),遍历path，返回一个对象，他的每个部分都是一个三元组,('目录x'，[目录x下的目录list]，目录x下面的文件)
+``` python
+import os
+def walk_dir(dir,fileinfo,topdown=True):
+    for root, dirs, files in os.walk(dir, topdown):
+        for name in files:
+            print(os.path.join(name))
+            fileinfo.write(os.path.join(root,name) + '\n')
+        for name in dirs:
+            print(os.path.join(name))
+            fileinfo.write('  ' + os.path.join(root,name) + '\n')
+dir = raw_input('please input the path:')
+fileinfo = open('list.txt','w')
+walk_dir(dir,fileinfo)
+```
+2. argparse模块
+``` python
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("-v", "--verbosity", type=int, choices=[0, 1, 2],
+                    help="increase output verbosity", action='store_true', default=True)
+args = parser.parse_args()
+```
+3. collections模块
+* counter
+``` python
+>>> from collections import Counter
+>>> c = Counter()
+>>> for ch in 'programming':
+        c[ch] = c[ch] + 1
+>>> c
+Counter({'g': 2, 'm': 2, 'r': 2, 'a': 1, 'i': 1, 'o': 1, 'n': 1, 'p': 1})
+```
+* Orderdict
+使用dict时，Key是无序的。在对dict做迭代时，我们无法确定Key的顺序,如果要保持Key的顺序，可以用OrderedDict：
+``` python
+>>> from collections import OrderedDict
+>>> d = dict([('a', 1), ('b', 2), ('c', 3)])
+>>> d # dict的Key是无序的
+{'a': 1, 'c': 3, 'b': 2}
+>>> od = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+>>> od # OrderedDict的Key是有序的
+OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+```
+4. sys模块
+
+
+
+
+
+
 
 # 三. 数据读取与保存
 ## 3.1 python读取

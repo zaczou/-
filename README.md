@@ -243,18 +243,24 @@ h5f.close()
 # 四. 结合论文熟悉不同框架
 ## 4.1 MRC（机器阅读理解）
 ### 4.1.1 r-net
+* [github](https://github.com/search?l=Python&o=desc&q=r-net&s=&type=Repositories&utf8=%E2%9C%93)
+* [tensorflow](https://github.com/HKUST-KnowComp/R-Net)
+* [pytorch](https://github.com/matthew-z/R-net)
+* [keras](https://github.com/YerevaNN/R-NET-in-Keras)
 ### 4.1.2 FusionNet
+* [tensorflow](https://github.com/obryanlouis/qa)
 ### 4.1.3 DCN+
 
 ## 4.2 VQA（视觉问答）
-### 4.2.1 MCB
-### 4.2.2 MFB
-### 4.2.3 MUTAN, Tucker Decomposition
-### 4.2.4 第一名方案
+### 4.2.1 [MCB]
+### 4.2.2 [MFB]
+### 4.2.3 [MUTAN, Tucker Decomposition]
+### 4.2.4 [第一名方案]
 
 ## 4.3 细粒度图像识别
 
 ## 4.4 Knowledge graph（知识图谱）
+* [复旦知识工厂](http://kw.fudan.edu.cn/#projects)
 
 ## 4.5 知识库问答
 

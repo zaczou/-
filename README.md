@@ -258,8 +258,12 @@ h5f.close()
 ## 4.2 VQA（视觉问答）
 ### 4.2.1 [MCB]
 ### 4.2.2 [MFB]
+* [pytorch](https://github.com/asdf0982/vqa-mfb.pytorch)
+* [caffe-py](https://github.com/yuzcccc/vqa-mfb)
 ### 4.2.3 [MUTAN, Tucker Decomposition]
-### 4.2.4 [2017 第一名方案][pytorch](https://github.com/markdtw/vqa-winner-cvprw-2017) 
+* [pytorch](https://github.com/cadene/vqa.pytorch)
+### 4.2.4 2017 第一名方案
+* [pytorch](https://github.com/markdtw/vqa-winner-cvprw-2017) 
 
 ## 4.3 细粒度图像识别
 

@@ -12,7 +12,7 @@ pymc3, edward, pystan</br>
 [lingo](https://zhuanlan.zhihu.com/p/29772798), pulp</br>
 
 word, excel, ppt</br>
-bdp</br>
+[bdp](https://me.bdp.cn/home.html)</br>
 
 everything, tampermonkey</br>
 [sharelatex](https://www.sharelatex.com/), [processon](https://www.processon.com/)</br>
@@ -30,6 +30,7 @@ for i in tqdm(range(100))
 ``` python
 from time import sleep
 print（"\r", object, end = ""）
+sleep(1)
 ```
 3. 格式化输出
  ``` python

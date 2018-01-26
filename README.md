@@ -17,7 +17,7 @@ bdp</br>
 everything, tampermonkey</br>
 sharelatex, processon</br>
 
-jupyter notebook, [colabotorary](https://zhuanlan.zhihu.com/p/33125415)[知乎](https://zhuanlan.zhihu.com/p/33232118)
+jupyter notebook, [colabotorary](https://zhuanlan.zhihu.com/p/33125415) [知乎](https://zhuanlan.zhihu.com/p/33232118)
 
 # 二. python及爬虫
 ## 2.1 python知识
@@ -345,13 +345,14 @@ plt.show()
 ### 5.4.1 不同模型权重
 1. (https://github.com/freelzy/Baidu_Dogs)</br>
 2. [Densenet](https://github.com/flyyufelix/DenseNet-Keras)
-### 5.4.2
+### 5.4.2 常用层或函数
 1. 回调函数
 ```
-from keras.callbacks import EarlyStopping  
-from keras.callbacks import TensorBoard
-early_stopping =EarlyStopping(monitor='val_loss', patience=20) 
+from keras.callbacks import EarlyStopping, TensorBoard, ModelCheckpoint 
+early_stopping = EarlyStopping(monitor='val_loss', patience=20) 
 tb = Tensorboard(log_dir='./log')
+checkpoint = ModelCheckpoint(filepath, monitor='val_loss', save_best_only=False, save_weights_only=False, mode='auto')
+model.fit(, callbacks=[early_stopping, tb, checkpoint])
 ```
 ## 5.5 pytorch  [英文](http://pytorch.org/), [中文](http://pytorch.apachecn.org/cn/0.3.0/)
 ### 5.5.1 不同模型权重

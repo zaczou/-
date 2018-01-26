@@ -84,7 +84,7 @@ def walk_dir(dir,fileinfo,topdown=True):
         for name in dirs:
             print(os.path.join(name))
             fileinfo.write('  ' + os.path.join(root,name) + '\n')
-dir = raw_input('please input the path:')
+dir = input('please input the path:')
 fileinfo = open('list.txt','w')
 walk_dir(dir,fileinfo)
 ```

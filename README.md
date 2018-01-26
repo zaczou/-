@@ -15,7 +15,7 @@ word, excel, ppt</br>
 bdp</br>
 
 everything, tampermonkey</br>
-sharelatex, processon</br>
+[sharelatex](https://www.sharelatex.com/), [processon](https://www.processon.com/)</br>
 
 jupyter notebook, [colabotorary](https://zhuanlan.zhihu.com/p/33125415) [知乎](https://zhuanlan.zhihu.com/p/33232118)
 
@@ -137,6 +137,16 @@ sys.byteorder # 本地字节规则的指示器，big-endian平台的值是'big',
 sys.copyright # 记录python版权相关的东西
 sys.api_version # 解释器的C的API版本
 ```
+
+5. re模块
+
+## 2.3 常用数据处理模块
+1. numpy
+
+2. pandas
+
+3. matplotlib
+
 
 # 三. 数据读取与保存
 ## 3.1 python读取

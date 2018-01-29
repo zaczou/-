@@ -256,6 +256,7 @@ h5f.close()
 
 
 # 四. 结合论文熟悉不同框架
+[基础](https://github.com/zhedongzheng/finch)
 ## 4.1 MRC（机器阅读理解）
 * [中文阅读理解比赛](https://mp.weixin.qq.com/s/vAj7vUkvPS7jqHzewb5AuQ)
 * [squad](https://rajpurkar.github.io/SQuAD-explorer/)
@@ -296,6 +297,22 @@ h5f.close()
 ## 4.6 GAN
 
 ## 4.7 强化学习
+
+## 4.8 机器翻译
+### 4.8.1 attention is all you need
+[github](https://github.com/search?l=Python&q=attention+is+all+you+need&type=Repositories&utf8=%E2%9C%93)
+* multi head attention
+[tensorflow](https://github.com/bojone/attention/blob/master/attention_tf.py)
+[pytorch]
+[keras](https://github.com/bojone/attention/blob/master/attention_keras.py)
+
+
+
+
+
+
+
+
 
 # 五. 不同框架知识
 ## 5.1 sklearn
@@ -442,6 +459,7 @@ tb = Tensorboard(log_dir='./log')
 checkpoint = ModelCheckpoint(filepath, monitor='val_loss', save_best_only=False, save_weights_only=False, mode='auto')
 model.fit(, callbacks=[early_stopping, tb, checkpoint])
 ```
+3. [keras attention block](https://github.com/NLP-Deeplearning-Club/keras_attention_block)
 
 
 ## 5.5 pytorch  [英文](http://pytorch.org/), [中文](http://pytorch.apachecn.org/cn/0.3.0/)

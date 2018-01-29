@@ -256,7 +256,7 @@ h5f.close()
 
 
 # 四. 结合论文熟悉不同框架
-[基础](https://github.com/zhedongzheng/finch)
+* [基础](https://github.com/zhedongzheng/finch)
 ## 4.1 MRC（机器阅读理解）
 * [中文阅读理解比赛](https://mp.weixin.qq.com/s/vAj7vUkvPS7jqHzewb5AuQ)
 * [squad](https://rajpurkar.github.io/SQuAD-explorer/)
@@ -300,11 +300,11 @@ h5f.close()
 
 ## 4.8 机器翻译
 ### 4.8.1 attention is all you need
-[github](https://github.com/search?l=Python&q=attention+is+all+you+need&type=Repositories&utf8=%E2%9C%93)
-* multi head attention
-[tensorflow](https://github.com/bojone/attention/blob/master/attention_tf.py)
-[pytorch]
-[keras](https://github.com/bojone/attention/blob/master/attention_keras.py)
+1. [github](https://github.com/search?l=Python&q=attention+is+all+you+need&type=Repositories&utf8=%E2%9C%93)
+2. multi head attention
+* [tensorflow](https://github.com/bojone/attention/blob/master/attention_tf.py)
+* [pytorch]
+* [keras](https://github.com/bojone/attention/blob/master/attention_keras.py)
 
 
 

@@ -1,4 +1,5 @@
 # 一. 软件安装
+## 1.1 
 linux，ubuntu</br>
 vs2015（不需要）</br>
 驱动 [cuda](https://developer.nvidia.com/cuda-toolkit-archive), cudnn60</br>
@@ -20,6 +21,10 @@ everything, tampermonkey</br>
 jupyter notebook, [colabotorary](https://zhuanlan.zhihu.com/p/33125415) [知乎](https://zhuanlan.zhihu.com/p/33232118)
 
 [jijidown](http://client.jijidown.com/)
+
+## 1.2 安装错误汇总
+* pip permissionerror: pip install --user package_name
+
 
 # 二. python及爬虫
 ## 2.1 python知识

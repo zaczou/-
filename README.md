@@ -1,5 +1,5 @@
 # 一. 软件安装
-## 1.1 
+## 1.1 软件
 linux，ubuntu</br>
 vs2015（不需要）</br>
 驱动 [cuda](https://developer.nvidia.com/cuda-toolkit-archive), cudnn60</br>
@@ -311,8 +311,10 @@ h5f.close()
 * [pytorch]
 * [keras](https://github.com/bojone/attention/blob/master/attention_keras.py)
 
-
-
+## 4.9 NRL&NE
+* [NRL](https://github.com/thunlp/nrlpapers)
+* OpenKE: [pytorch](https://github.com/thunlp/OpenKE/tree/OpenKE-PyTorch)
+* OpenNE: [tensorflow](https://github.com/thunlp/OpenNE)
 
 
 

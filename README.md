@@ -254,6 +254,12 @@ h5f.close()
 
 
 ## 3.2 tensorflow
+* (https://zhuanlan.zhihu.com/p/33223782)
+## 3.2.1 tfrecord
+1. 制作tfrecord
+
+2. 读取tfrecord
+
 
 ## 3.3 pytorch
 

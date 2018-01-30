@@ -258,6 +258,7 @@ h5f.close()
 * 利用placeholder
 * 从原始文件读取
 * 读取tfrecord文件
+* tf.data
 ## 3.2.1 tfrecord
 1. 制作tfrecord
 

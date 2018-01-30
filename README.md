@@ -255,6 +255,7 @@ h5f.close()
 
 ## 3.2 tensorflow
 * (https://zhuanlan.zhihu.com/p/33223782
+* (https://zhuanlan.zhihu.com/p/30751039)
 * 利用placeholder
 * 从原始文件读取
 * 读取tfrecord文件

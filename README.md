@@ -154,13 +154,32 @@ sys.api_version # 解释器的C的API版本
 2. pandas
 
 3. matplotlib
+* 常用
 ``` python
 plt.figure(figsize=(10,5))
 ax = plt.gca()
 ax.spines['top'].set_visible(False)  #去掉上边框
 ax.spines['right'].set_visible(False) #去掉右边框
+```
+* 子图绘制
+``` python
+fig = plt.figure() #figsize=(10,6)
+ax1 = fig.add_subplot(221) #表示在2*2的网格的格式里，占第一个位置
+ax2 = fig.add_subplot(222) #表示在2*2的网格的格式里，占第二个位置
+ax3 = fig.add_subplot(212) #表示在2*1的网格的格式里，占第2个位置
+fig.suptitle('subplot training') ## 整幅图的标题，大标题
+fig.subplots_adjust(hspace=0.4) #增加子图间的间隔
+plt.show()
+```
+
+```python
+fig, axes = plt.subplots(2, 3, sharex = False, sharey = False)
+axes[0][1].plot
+
 
 ```
+
+
 # 三. 数据读取与保存
 ## 3.1 python读取
 ### 3.1.1 txt, csv, excel等文件

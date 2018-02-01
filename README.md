@@ -174,8 +174,9 @@ plt.show()
 
 ```python
 fig, axes = plt.subplots(2, 3, sharex = False, sharey = False)
-axes[0][1].plot
-
+axes[0][1].plot()
+fig.subplots_adjust（left = None, bottom = None, right  = None, top = None, wsapce = None, hspace = None ）
+# wspace 和 hspace是控制宽度和高度的百分比
 
 ```
 

@@ -154,8 +154,13 @@ sys.api_version # 解释器的C的API版本
 2. pandas
 
 3. matplotlib
+``` python
+plt.figure(figsize=(10,5))
+ax = plt.gca()
+ax.spines['top'].set_visible(False)  #去掉上边框
+ax.spines['right'].set_visible(False) #去掉右边框
 
-
+```
 # 三. 数据读取与保存
 ## 3.1 python读取
 ### 3.1.1 txt, csv, excel等文件

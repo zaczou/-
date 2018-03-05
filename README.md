@@ -21,13 +21,14 @@ everything, tampermonkey</br>
 jupyter notebook, [colabotorary](https://zhuanlan.zhihu.com/p/33125415) [知乎](https://zhuanlan.zhihu.com/p/33232118)
 
 [jijidown](http://client.jijidown.com/)
+inkscape
 
 ## 1.2 安装错误汇总
 * pip permissionerror: pip install --user package_name
 
 
 # 二. python及爬虫
-## 2.1 python知识
+## 2.1 python小知识
 1. 显示进度条
 ``` python
 from tqdm import tqdm

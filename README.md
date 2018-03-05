@@ -1,4 +1,4 @@
-# 一. 软件安装
+# 一. 技术
 ## 1.1 软件
 linux，ubuntu</br>
 vs2015（不需要）</br>
@@ -8,6 +8,7 @@ python, java</br>
 更改conda, pip镜像</br>
 tensorflow-gpu, pytorch, keras</br>
 xgboost：git, mingw or tdm-gcc</br>
+数据库</br>
 
 pymc3, edward, pystan</br>
 [lingo](https://zhuanlan.zhihu.com/p/29772798), pulp</br>
@@ -362,7 +363,7 @@ h5f.close()
 
 
 
-# 五. 不同框架知识
+# 五. 工具
 ## 5.1 sklearn
 1. 绘制confusion matrix
 ``` python

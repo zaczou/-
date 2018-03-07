@@ -292,10 +292,26 @@ h5f.close()
 * 读取tfrecord文件
 * tf.data
 ## 3.2.1 tfrecord
+(https://zhuanlan.zhihu.com/p/33223782)
 1. 制作tfrecord
 
 2. 读取tfrecord
 
+## 3.2.2 队列输入
+```python
+with tf.Session() as sess:
+  filename_queue = tf.train.string_input_producer(filename, shuffle=False, num_epochs=5)
+  threads = tf.train.start_queue_runners(sess=sess)
+```
+
+## 3.2.3 Dataset API
+(http://blog.csdn.net/dqcfkyqdxym3f8rb0/article/details/79342369)
+(https://zhuanlan.zhihu.com/p/32649553)
+```python
+dataset = tf.data.Dataset.from_tensor_slices(tf.random_uniform([100, 2]))
+iterator = dataset.make_one_shot_iterator()
+el = iterator.get_next()
+```
 
 ## 3.3 pytorch
 

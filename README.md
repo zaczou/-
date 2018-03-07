@@ -312,7 +312,15 @@ for name in filenames:
   writer.write(example_str)
 writer.close()
 ```
+* 文本tfrecord
+```python
+for example in tqdm(examples):
+    record = tf.train.Example(features=tf.train.Features(feature={
+                      "context_idxs": tf.train.Feature(bytes_list=tf.train.BytesList(value=[context_idxs.tostring()])))
+writer.write(record.SerializeToString())
+```
 2. 读取tfrecord
+* TFRecordReader读取
 ```python
 def read_tfrecord(tfrecord_path, num_epochs, shuffle=True):
     filename_queue = tf.train.string_input_producer([tfrecord_path], num_epochs=num_epochs, shuffle=True)
@@ -326,15 +334,13 @@ def read_tfrecord(tfrecord_path, num_epochs, shuffle=True):
     img =  tf.reshape(img, [256, 256, 3])
 return img
 ```
+* Dataset读取
 ```python
-
-
-
+filenames = ["test1.tfrecord", "test2.tfrecord"]
+dataset = tf.data.TFRecordDataset(filenames)
+iterator = new_dataset.make_one_shot_iterator()
+next_element = iterator.get_next()
 ```
-
-
-
-
 
 ## 3.2.2 队列输入
 * 一般

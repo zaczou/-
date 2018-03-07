@@ -295,8 +295,46 @@ h5f.close()
 ## 3.2.1 tfrecord
 (https://zhuanlan.zhihu.com/p/33223782)
 1. 制作tfrecord
-
+* 图片tfrecord
+``` python
+writer = tf.python_io.TFRecordWriter('./training.tfrecord')
+filenames = get_filenames(root)
+for name in filenames:
+  img = Image.open(name)
+  img = img.resize((256, 256), Image.NEAREST)
+  img_raw = img.tobytes()  #将图片转化为原生bytes
+  feature_internal = {'img_raw':tf.train.Feature(byteslist=tf.train.BytesList(value=[img_raw]))}
+  feature_external = tf.train.Features(feature=feature_internal)
+  example = tf.train.Example(features=feature_external)
+# example = tf.train.Example(features=tf.train.Features(feature={
+#                            'img_raw':tf.train.Feature(byteslist=tf.train.BytesList(value=[img_raw])}))
+  example_str = example.SerializeToString()
+  writer.write(example_str)
+writer.close()
+```
 2. 读取tfrecord
+```python
+def read_tfrecord(tfrecord_path, num_epochs, shuffle=True):
+    filename_queue = tf.train.string_input_producer([tfrecord_path], num_epochs=num_epochs, shuffle=True)
+
+    reader = tf.TFRecordReader()
+    _, serialized_example = reader.read(filename_queue)
+    features = tf.parse_single_example(serialized_example, features={
+               "img_raw": tf.FixedLenFeature([], tf.string),
+    })
+    img = tf.decode_raw(features["img_raw"], tf.uint8)
+    img =  tf.reshape(img, [256, 256, 3])
+return img
+```
+```python
+
+
+
+```
+
+
+
+
 
 ## 3.2.2 队列输入
 * 一般

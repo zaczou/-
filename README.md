@@ -291,6 +291,7 @@ h5f.close()
 * 从原始文件读取
 * 读取tfrecord文件
 * tf.data
+
 ## 3.2.1 tfrecord
 (https://zhuanlan.zhihu.com/p/33223782)
 1. 制作tfrecord
@@ -298,6 +299,7 @@ h5f.close()
 2. 读取tfrecord
 
 ## 3.2.2 队列输入
+* 一般
 ```python
 data = np.random.uniform(0,1, size=(9,2))
 #labels= [1,2,3]   
@@ -312,6 +314,90 @@ with tf.Session() as sess:
     coord.request_stop()
     coord.join(threads)
 ```
+* 实例：图片读取
+```python
+import tensorflow as tf
+import os
+
+def get_filenames(path):
+    filenames = []
+    for root, dirs, files in os.walk(path):
+        for f in files:
+            if ".jpg" in f:
+                filenames.append(os.path.join(root, f))
+return filenames
+
+## 直接读取图片
+def read_img(filenames, num_epochs, shuffle=True):
+    filename_queue = tf.train.string_input_producer(filenames,    
+                              num_epochs=num_epochs, shuffle=True)
+    reader = tf.WholeFileReader()
+    key, value = reader.read(filename_queue)
+    img = tf.image.decode_jpeg(value, channels=3)
+    img = tf.image.resize_images(img, size=(256, 256),
+                   method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
+    return img
+
+## 制作tfrecord
+def convert_to_tfrecord():
+    writer = tf.python_io.TFRecordWriter("./training.tfrecords")
+    filenames = get_filenames(root)
+    for name in filenames:
+        img = Image.open(name)
+        if img.mode == "RGB":
+            img = img.resize((256, 256), Image.NEAREST)
+            img_raw = img.tobytes()
+            example = tf.train.Example(features=tf.train.Features(feature={
+                      "img_raw":tf.train.Feature(bytes_list=tf.train.BytesList(value=[img_raw]))
+            }))
+            writer.write(example.SerializeToString())
+writer.close()
+
+## 读取tfrecord
+def read_tfrecord(filenames, num_epochs, shuffle=True):
+    filename_queue = tf.train.string_input_producer([filenames], num_epochs=num_epochs, shuffle=True)
+
+    reader = tf.TFRecordReader()
+    _, serialized_example = reader.read(filename_queue)
+    features = tf.parse_single_example(serialized_example, features={
+               "img_raw": tf.FixedLenFeature([], tf.string),
+    })
+    img = tf.decode_raw(features["img_raw"], tf.uint8)
+    img =  tf.reshape(img, [256, 256, 3])
+return img
+
+if __name__ == '__main__':    
+  with tf.Session() as sess:
+    min_after_dequeue = 1000
+    capacity = min_after_dequeue + 3*4
+
+    img = read_img(get_filenames(root), 1, True)
+    # img = read_tfrecord("training.tfrecords", 1, True)
+    img_batch = tf.train.shuffle_batch([img], batch_size=4,   
+                                       num_threads=8,
+                                       capacity=capacity,
+                                   min_after_dequeue=min_after_dequeue)
+
+    init = (tf.global_variables_initializer(),          
+            tf.local_variables_initializer())
+    sess.run(init)
+    coord = tf.train.Coordinator()
+    threads = tf.train.start_queue_runners(coord=coord)
+    i = 0
+    try:
+        while not coord.should_stop():
+            imgs = sess.run([img_batch])
+            for img in imgs:
+                print(img.shape)
+    except Exception, e:
+        coord.request_stop(e)
+    finally:
+        coord.request_stop()
+    coord.join(threads)
+```
+
+
+
 
 ## 3.2.3 Dataset API
 * (http://blog.csdn.net/dqcfkyqdxym3f8rb0/article/details/79342369)

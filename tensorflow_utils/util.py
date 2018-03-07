@@ -3,6 +3,37 @@ import re
 from collections import Counter
 import string
 
+def weight(name, shape, init='he', range=None):
+    """ Initializes weight.
+    :param name: Variable name
+    :param shape: Tensor shape
+    :param init: Init mode. xavier / normal / uniform / he (default is 'he')
+    :param range:
+    :return: Variable
+    """
+    initializer = tf.constant_initializer()
+    if init == 'xavier':
+        fan_in, fan_out = _get_dims(shape)
+        range = math.sqrt(6.0 / (fan_in + fan_out))
+        initializer = tf.random_uniform_initializer(-range, range)
+
+    elif init == 'he':
+        fan_in, _ = _get_dims(shape)
+        std = math.sqrt(2.0 / fan_in)
+        initializer = tf.random_normal_initializer(stddev=std)
+
+    elif init == 'normal':
+        initializer = tf.random_normal_initializer(stddev=0.1)
+
+    elif init == 'uniform':
+        if range is None:
+            raise ValueError("range must not be None if uniform init is used.")
+        initializer = tf.random_uniform_initializer(-range, range)
+
+    var = tf.get_variable(name, shape, initializer=initializer)
+    tf.add_to_collection('l2', tf.nn.l2_loss(var))  # Add L2 Loss
+    return var
+
 
 def get_record_parser(config, is_test=False):
     def parse(example):

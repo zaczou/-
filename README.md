@@ -376,8 +376,9 @@ def read_img(filenames, num_epochs, shuffle=True):
     filename_queue = tf.train.string_input_producer(filenames,    
                               num_epochs=num_epochs, shuffle=True)
     reader = tf.WholeFileReader()
-    key, value = reader.read(filename_queue)
-    img = tf.image.decode_jpeg(value, channels=3)
+    key, value = reader.read(filename_queue) #reader读取序列
+    #image_value = tf.read_file(filename) # 貌似读取单幅图
+    img = tf.image.decode_jpeg(value, channels=3) ## 解码 tensor
     img = tf.image.resize_images(img, size=(256, 256),
                    method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
     return img

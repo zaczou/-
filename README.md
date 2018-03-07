@@ -299,14 +299,23 @@ h5f.close()
 
 ## 3.2.2 队列输入
 ```python
+data = np.random.uniform(0,1, size=(9,2))
+#labels= [1,2,3]   
+f = tf.train.slice_input_producer([data], shuffle=False)
+batch = tf.train.batch(f, batach_size=batch_size)
 with tf.Session() as sess:
-  filename_queue = tf.train.string_input_producer(filename, shuffle=False, num_epochs=5)
-  threads = tf.train.start_queue_runners(sess=sess)
+    sess.run(tf.global_variables_initializer())
+    coord = tf.train.Coordinator()
+    threads = tf.train.start_queue_runners(sess=sess, coord=coord)
+    k = sess.run(batch)
+    print('k', k)
+    coord.request_stop()
+    coord.join(threads)
 ```
 
 ## 3.2.3 Dataset API
-(http://blog.csdn.net/dqcfkyqdxym3f8rb0/article/details/79342369)
-(https://zhuanlan.zhihu.com/p/32649553)
+* (http://blog.csdn.net/dqcfkyqdxym3f8rb0/article/details/79342369)
+* (https://zhuanlan.zhihu.com/p/32649553)
 ```python
 dataset = tf.data.Dataset.from_tensor_slices(tf.random_uniform([100, 2]))
 iterator = dataset.make_one_shot_iterator()

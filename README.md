@@ -327,8 +327,8 @@ def read_tfrecord(tfrecord_path, num_epochs, shuffle=True):
 
     reader = tf.TFRecordReader()
     _, serialized_example = reader.read(filename_queue)
-    features = tf.parse_single_example(serialized_example, features={
-               "img_raw": tf.FixedLenFeature([], tf.string),
+    features = tf.parse_single_example(serialized_example, 
+                features={"img_raw": tf.FixedLenFeature([], tf.string)
     })
     img = tf.decode_raw(features["img_raw"], tf.uint8)
     img =  tf.reshape(img, [256, 256, 3])

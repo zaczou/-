@@ -264,6 +264,9 @@ cv2.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]])
 # cv2.INTER_CUBIC: 立方插值
 # cv2.INTER_LINEAR: 双线形插值　
 # cv2.INTER_NN: 最近邻插值
+
+(r, g, b)=cv2.split(img)  ##如果原始img是RGB模式
+img=cv2.merge([b,g,r]) 
 win = cv2.namedWindow('bg win', flags=0)   
 cv2.imshow('bg win', image) ## 可变窗口
 cv2.waitKey(0)  

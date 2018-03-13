@@ -216,11 +216,10 @@ from PIL import Image
 image = Image.open('test.jpg') ## 打开图片 宽*高
 image.size #(w, h) 
 image.mode #(RGB)
-image = image.resize(200, 200, Image.NEAREST)
+image = image.resize((200, 200), Image.NEAREST)
 image.convert('L') ##转换灰度图
-image_a = np.array(image,dtype=np.float32) # image = np.array(image)默认是uint8
-image_a.shape (h,w,c)
-image_a.show()
+image_a = np.array(image,dtype=np.float32) # image = np.array(image) 默认是uint8
+image_a.shape #(h,w,c)
 ```
 2. Skimage
 ``` python
@@ -228,7 +227,7 @@ import skimage
 from skimage import io,transform
 image= io.imread('test.jpg',as_grey=False) # True为灰度图, numpy.ndarray, uint8,[0-255]
 image.shape #(h, w, c)
-image.mode #(RGB)
+# mode #(RGB)
 transform.resize(im, output_shape=(20, 20), order=0, mode='constant', preserve_range=True).astype(np.uint8)
 # order: 0 代表最近邻插值，1代表双线性插值。。。
 # preserve_range: True的话表示保持原有的 取值范围，false 的话就成 0-1 了
@@ -239,8 +238,9 @@ transform.resize(im, output_shape=(20, 20), order=0, mode='constant', preserve_r
 ``` python 
 import matplotlib.pyplot as plt # plt 用于显示图片
 import matplotlib.image as mpimg # mpimg 用于读取图片
-lena = mpimg.imread('lena.png') # 读取和代码处于同一目录下的 lena.png
-# 此时 lena 就已经是一个 np.array 了，可以对它进行任意处理
+lena = mpimg.imread('lena.png') # np.array 了，uint8
+lena = plt.imread('lena.png') # np.array 了，uint8
+
 lena.shape #(512, 512, 3)
 plt.imshow(lena) # 显示图片
 plt.axis('off') # 不显示坐标轴
@@ -264,6 +264,9 @@ cv2.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]])
 # cv2.INTER_CUBIC: 立方插值
 # cv2.INTER_LINEAR: 双线形插值　
 # cv2.INTER_NN: 最近邻插值
+win = cv2.namedWindow('bg win', flags=0)   
+cv2.imshow('bg win', image) ## 可变窗口
+cv2.waitKey(0)  
 ```
 
 ### 3.1.4 保存

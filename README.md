@@ -232,6 +232,8 @@ transform.resize(im, output_shape=(20, 20), order=0, mode='constant', preserve_r
 # order: 0 代表最近邻插值，1代表双线性插值。。。
 # preserve_range: True的话表示保持原有的 取值范围，false 的话就成 0-1 了
 # 返回的是 float，有需要的可以强转一下类型)
+io.imshow()
+io.imsave()
 ```
 
 3. Matplotlib
@@ -245,6 +247,7 @@ lena.shape #(512, 512, 3)
 plt.imshow(lena) # 显示图片
 plt.axis('off') # 不显示坐标轴
 plt.show()
+plt.savefig()
 ```
 
 4. opencv(python版)（BGR）
@@ -269,6 +272,7 @@ cv2.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]])
 img=cv2.merge([b,g,r]) 
 win = cv2.namedWindow('bg win', flags=0)   
 cv2.imshow('bg win', image) ## 可变窗口
+cv2.imwrite('', image)
 cv2.waitKey(0)  
 ```
 

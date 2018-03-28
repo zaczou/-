@@ -27,6 +27,9 @@ inkscape
 ## 1.2 安装错误汇总
 * pip permissionerror: pip install --user package_name
 
+## 1.3 NLP工具
+* jieba， FoolNLTK， gensim， snownlp
+
 
 # 二. python及爬虫
 ## 2.1 python小知识

@@ -1,17 +1,20 @@
 # coding: utf-8
 
 import os
+import numpy as np
+from tqdm import tqdm
 import tensorflow as tf
 import argparse
 
 parse = argparse.ArguementParse()
 parse.add_argument('--mode', type=sting, help="mode of the model", default='train')
 parse.add_argument('--epochs', type=int, help="numbers of traing", default=100)
+parse.add_argument('--log_dir', type=string, help="direction of logs", default="./logs")
+parse.add_argument('--save_dir', type=string, help="direction of save", default="./save")
+
 args = parse.parse_args()
 
 os.path.join()
-log_dir = "./logs"
-save_dir = "./model"
 
 if not os.path.exists(save_dir):
     os.makedirs(save_dir)
@@ -28,11 +31,10 @@ def train(config):
     train_iterator = train_dataset.make_one_shot_iterator()
     dev_iterator = dev_dataset.make_one_shot_iterator()
     
-    model = Model(config, iterator, word_mat, is_train=True)
+    model = Model(config, iterator, is_training=True)
     sess_config = tf.ConfigProto(allow_soft_placement=True)   #如果你指定的设备不存在，允许TF自动分配设备
     sess_config.gpu_options.allow_growth = True #使用allow_growth option，刚一开始分配少量的GPU容量，然后按需慢慢的增加，由于不会释放
-										        #内存，所以会导致碎片
-    
+										        #内存，所以会导致碎片    
     loss_save = 1000.0
     patience = config.patience
     lr = config.init_lr
@@ -43,13 +45,13 @@ def train(config):
         saver = tf.train.saver()
         
         train_handle = sess.run(train_iterator.string_handle())
-        dev_handle = sess.run(dev_iterator_string_handle())
-        sess.run(tf.assign(model.is_train, tf.constant(True, dtype=tf.bool)))
-        sess.run(tf.assing(model.lr, tf.constant(lr, dtype=tf.float32)))
+        dev_handle = sess.run(dev_iterator.string_handle())
+        #sess.run(tf.assign(model.is_training, tf.constant(True, dtype=tf.bool)))
+        #sess.run(tf.assing(model.lr, tf.constant(lr, dtype=tf.float32)))
         
         for ep in tqdm(range(1, config.num_epochs + 1)):
             global_step = sess.run(model.global_step)
-            loss, train_op = sess.run([model.loss, model.train_op], feed_dict)
+            loss, train_op = sess.run([model.loss, model.train_op], feed_dict={handle: train_handle})
             
             if global_step % config.period == 0:
                 loss_sum = tf.Summary(value=[tf.Summary.Value(tag="model/loss", simple_value=loss), ])
@@ -67,8 +69,9 @@ def train(config):
                     loss_save = dev_lss
                     patience = 0
                 sess.run()
-                    
-                    
+		
+                writer.flush()
+                filename = os.path.join(config.save_dir, "model_{}.ckpt".format(global_step))
                 saver.save(sess, filename)
     
 
@@ -97,14 +100,15 @@ def train(config):
 def test(config):
     ## load test data
     print("loading model...")
-    
-    model = Model(config, is_train=False)
+    test_data =   ## tf.data类型
+    test_iterator = test_data.make_one_shot_iterator()
+	
+    model = Model(config, test_iterator, is_training=False)
     sv = tf.train.Supervisor()
-    with sv.managed_session() as sess:
+    with sv.managed_session() as sess: ##不需要run(tf.global_variables_initializer())
         sv.saver.restore(sess, tf.train.latest_checkpoint(config.save_dir))
         
           
-    
 if __name__ == '__main__':
     if args.mode = "train":
         print("Traing model")

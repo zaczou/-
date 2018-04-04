@@ -9,8 +9,8 @@ import argparse
 parse = argparse.ArguementParse()
 parse.add_argument('--mode', type=sting, help="mode of the model", default='train')
 parse.add_argument('--epochs', type=int, help="numbers of traing", default=100)
-parse.add_argument('--log_dir', type=string, help="direction of logs", default="./logs")
-parse.add_argument('--save_dir', type=string, help="direction of save", default="./save")
+parse.add_argument('--log_dir', type=string, help="directory for events", default="./logs")
+parse.add_argument('--save_dir', type=string, help="directory for saving model", default="./save")
 
 args = parse.parse_args()
 
@@ -118,5 +118,6 @@ if __name__ == '__main__':
         test(args)
     else:
         print("Invalid mode.")
+	exit(0)
     
 
